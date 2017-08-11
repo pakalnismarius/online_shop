@@ -2,8 +2,34 @@
  height: 100vh;
 }
 
+.mt-30 {
+  margin-top: 30px;
+}
+
+.mb-70 {
+  margin-bottom: 70px;
+}
+
+.btn-primary {
+  background-color: transparent;
+  border: solid 2px;
+  color: black;
+  padding: 20px 46px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.btn-primary:hover {
+  color: #fff;
+  background-color: #333;
+  border-color: #333;
+}
+
 @media screen and (max-width: 480px) {
     .overlay {
         height: 400px;
     }
 }
+
