@@ -1,3 +1,18 @@
+@font-face {
+  font-family: "Open Sans Ligth";
+  src: url(/assets/OpenSans-Light.ttf) format("truetype");
+}
+
+.title {
+  font-size: 19px;
+  line-height: 1.26em;
+  text-transform: none;
+  letter-spacing: .02em;
+  font-weight: normal;
+  font-style: normal;
+  color: #333;
+}
+
 .m-30 { margin: 30px; }
 
 .mt-30 {
@@ -15,13 +30,19 @@
 
 .btn-primary {
   background-color: transparent;
+  text-transform: uppercase;
+  font-weight: 700;
   border: solid 2px;
+  border-radius: 0px;
   color: black;
-  padding: 20px 46px;
+  padding: 15px;
+  padding-left: 30px;
+  padding-right: 30px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
+  letter-spacing: .11em;
 }
 
 .btn-primary:hover {
