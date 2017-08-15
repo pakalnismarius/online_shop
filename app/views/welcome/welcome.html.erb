@@ -1,9 +1,15 @@
 <div class="container-fluid">
   <div class="row" align="center">
-    <div class="col-sm-6 no-padding">
-      <div class="mt-30 mb-70"><%= image_tag("flower.jpg") %></div>
-      <h3>Bet koks tekstas</h3>
-      <button class="btn btn-primary m-30">Click me</button>
+    <div class="col-sm-6 no-padding" id="window-h">
+      <div class="mt-30 mb-70"><%= image_tag("white.png") %></div>
+      <p class="title">Bet koks tekstas</p>
+      <button class="btn btn-primary m-30">Atrask</button>
+      <div class="text-center">
+        <a class="btn btn-social-icon btn-facebook"><i class="fa fa-facebook"></i></a>
+        <a class="btn btn-social-icon btn-instagram"><i class="fa fa-instagram"></i></a>
+        <a class="btn btn-social-icon btn-pinterest"><i class="fa fa-pinterest"></i></a>
+        <a class="btn btn-social-icon btn-twitter"><i class="fa fa-twitter"></i></a>
+      </div>
     </div>
      
     <div class="col-sm-6 no-padding" id="window-width">
@@ -13,3 +19,30 @@
     </div>
   </div>
 </div>
+
+
+      
+
+    
+    
+<script>
+  $(function () {
+  var all_classes = "";
+  var timer = undefined;
+  $.each($('li', '.social-class'), function (index, element) {
+    all_classes += " btn-" + $(element).data("code");
+  });
+  $('li', '.social-class').mouseenter(function () {
+    var icon_name = $(this).data("code");
+    if ($(this).data("icon")) {
+      icon_name = $(this).data("icon");
+    }
+    var icon = "<i class='fa fa-" + icon_name + "'></i>";
+    $('.btn-social', '.social-sizes').html(icon + "Sign in with " + $(this).data("name"));
+    $('.btn-social-icon', '.social-sizes').html(icon);
+    $('.btn', '.social-sizes').removeClass(all_classes);
+    $('.btn', '.social-sizes').addClass("btn-" + $(this).data('code'));
+  });
+  $($('li', '.social-class')[Math.floor($('li', '.social-class').length * Math.random())]).mouseenter();
+});
+</script>
