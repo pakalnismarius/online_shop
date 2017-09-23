@@ -1,3 +1,99 @@
-// Place all the styles related to the welcome controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@font-face {
+  font-family: "Open Sans Ligth";
+  src: url(/assets/OpenSans-Light.ttf) format("truetype");
+}
+
+.title {
+  font-size: 19px;
+  line-height: 1.26em;
+  text-transform: none;
+  letter-spacing: .02em;
+  font-weight: normal;
+  font-style: normal;
+  color: #333;
+}
+
+.m-30 { margin: 30px; }
+
+.mt-30 {
+  margin-top: 30px;
+}
+
+.mb-70 {
+  margin-bottom: 70px;
+}
+
+.mt-25 {
+  margin-top: 25px;
+}
+
+.no-padding {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.btn-transperant {
+  background-color: transparent;
+  text-transform: uppercase;
+  font-weight: 700;
+  border: solid 2px;
+  border-radius: 0px;
+  color: black;
+  padding: 15px;
+  padding-left: 30px;
+  padding-right: 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  letter-spacing: .11em;
+}
+
+.btn-transperant:hover {
+  color: #fff;
+  background-color: #333;
+  border-color: #333;
+}
+
+.welcome-nav{
+  background-color: transparent;
+}
+
+.nav-text {
+  font-family: "proxima-nova",arial,sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0px;
+  font-size: 11px;
+  font-weight: 600;
+  font-style: normal;
+  text-transform: uppercase;
+  letter-spacing: .98px;
+  display: block;
+  cursor: pointer;
+  border-bottom: 1px solid transparent;
+  transition: color .3s,border-bottom-color .3s;
+}
+
+.nav-socials {
+  float: right;
+  margin-top: 25px;
+}
+
+.navbar-default .navbar-nav.nav-text li  a{
+  color: #000;
+}
+
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover{
+  color: rgba(107,107,107,.56) !important;
+  background-color: transparent;
+}
+
+.navbar-default .navbar-nav a:hover,
+.navbar-default .navbar-nav a:focus{
+  color: rgba(107,107,107,.56);
+  background-color: transparent;
+  text-decoration: underline;
+}
