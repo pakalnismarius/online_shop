@@ -1,14 +1,19 @@
 <style> #header { display: none } </style>
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default welcome-nav">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">WebSiteName</a>
+      <%= image_tag("white.png") %>
     </div>
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Home</a></li>
-      <li><a href="#">Page 1</a></li>
-      <li><a href="#">Page 2</a></li>
-      <li><a href="#">Page 3</a></li>
+    <ul class="nav navbar-nav mt-25 nav-text">
+      <li class="<%= active_class(pradinis_path) %>"><a href="#">pradinis</a></li>
+      <li class="<%= active_class(root_path) %>"><%= link_to 'apie mus', root_path %>
+      <li class="<%= active_class(root_path) %>"><a href="#">puokštės</a></li>
+      <li class="<%= active_class(root_path) %>"><a href="#">vazonai ir baldai laukui</a></li>
+      <li class="<%= active_class(root_path) %>"><a href="#">įmonėms</a></li>
+      <li class="<%= active_class(root_path) %>"><a href="#">kontaktai</a></li>
     </ul>
+    <div class="nav-socials"><%= render 'layouts/socials' %></div>
   </div>
 </nav>
+
+
