@@ -16,4 +16,5 @@
 //= require jquery
 //= require bootstrap-sprockets
 //= welcome
+//= home
 //= require_tree .
