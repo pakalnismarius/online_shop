@@ -1,12 +1,11 @@
-<style> #header { display: none } </style>
-<nav class="navbar navbar-default welcome-nav">
+<nav class="navbar navbar-default welcome-nav" id="nav">
   <div class="container-fluid">
     <div class="navbar-header">
       <%= image_tag("white.png") %>
     </div>
     <ul class="nav navbar-nav mt-25 nav-text">
-      <li class="<%= active_class(pradinis_path) %>"><a href="#">pradinis</a></li>
-      <li class="<%= active_class(root_path) %>"><%= link_to 'apie mus', root_path %>
+      <li class="<%= active_class(home_path) %>"><%= link_to 'pradinis', home_path %></li>
+      <li class="<%= active_class(about_us_path) %>"><%= link_to 'apie mus', about_us_path %>
       <li class="<%= active_class(root_path) %>"><a href="#">puokštės</a></li>
       <li class="<%= active_class(root_path) %>"><a href="#">vazonai ir baldai laukui</a></li>
       <li class="<%= active_class(root_path) %>"><a href="#">įmonėms</a></li>
@@ -16,4 +15,12 @@
   </div>
 </nav>
 
-
+<script>
+  $(document).ready(function() {
+    var carusel = document.getElementById('mycarousel');
+    var navbar = document.getElementById('nav')
+    if (carusel == null && navbar !== null) {
+      navbar.style.backgroundColor = "white";
+    }
+  });
+</script>
