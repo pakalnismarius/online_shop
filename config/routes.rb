@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   root 'welcome#welcome'
   get '/pradinis', to: 'welcome#home', as: 'home'
   get 'apie_mus', to: 'welcome#about_us', as: 'about_us'
+  get 'puokstes', to: 'welcome#products', as: 'products'
 end

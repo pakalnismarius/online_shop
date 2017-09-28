@@ -5,8 +5,8 @@
     </div>
     <ul class="nav navbar-nav mt-25 nav-text">
       <li class="<%= active_class(home_path) %>"><%= link_to 'pradinis', home_path %></li>
-      <li class="<%= active_class(about_us_path) %>"><%= link_to 'apie mus', about_us_path %>
-      <li class="<%= active_class(root_path) %>"><a href="#">puokštės</a></li>
+      <li class="<%= active_class(about_us_path) %>"><%= link_to 'apie mus', about_us_path %></li>
+      <li class="<%= active_class(root_path) %>"><%= link_to 'puokštės', products_path %></li>
       <li class="<%= active_class(root_path) %>"><a href="#">vazonai ir baldai laukui</a></li>
       <li class="<%= active_class(root_path) %>"><a href="#">įmonėms</a></li>
       <li class="<%= active_class(root_path) %>"><a href="#">kontaktai</a></li>
@@ -14,13 +14,3 @@
     <div class="nav-socials"><%= render 'layouts/socials' %></div>
   </div>
 </nav>
-
-<script>
-  $(document).ready(function() {
-    var carusel = document.getElementById('mycarousel');
-    var navbar = document.getElementById('nav')
-    if (carusel == null && navbar !== null) {
-      navbar.style.backgroundColor = "white";
-    }
-  });
-</script>
