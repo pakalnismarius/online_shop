@@ -9,4 +9,7 @@ class WelcomeController < ApplicationController
   def abounb_us
   end
 
+  def product
+  end
+
 end
