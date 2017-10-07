@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171007061502) do
+ActiveRecord::Schema.define(version: 20171007080255) do
 
   create_table "bunches", force: :cascade do |t|
     t.integer  "order_id"
     t.string   "gender_for"
     t.integer  "price",      default: 0
-    t.string   "color"
+    t.text     "color"
     t.text     "comment"
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
