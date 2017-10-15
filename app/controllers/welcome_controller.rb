@@ -8,7 +8,7 @@ class WelcomeController < ApplicationController
     @bunch = Bunch.new
   end
 
-  def abounb_us
+  def about_us
     @bunch = Bunch.new
   end
 
@@ -32,7 +32,7 @@ class WelcomeController < ApplicationController
     @bunch = @order.bunches.new(bunch_params)
     if @bunch.save
       redirect_to root_path
-      flash[:notice] = "Successfully created!"
+      flash[:success] = "Successfully created!"
     else
       redirect_to about_us_path
       #render action: 'new'
