@@ -15,7 +15,7 @@
 //= require jquery.turbolinks
 //= require jquery_ujs
 //= require bootstrap-sprockets
-//= welcome
 //= home
+//= welcome
 //= require turbolinks
 //= require_tree .

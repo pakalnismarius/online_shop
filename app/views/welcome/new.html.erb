@@ -38,12 +38,12 @@
         </div>
 
         <h3>Puokštė *</h3>
-        <div class="field">
-          <%= f.check_box :gender_for, as: :boolean %>
+        <div class="field gender-selector">
+          <%= f.check_box :gender_for, {}, "Vyras" %>
           <%= f.label "Vyras" %>
         </div>
-        <div class="field">
-          <%= f.check_box :gender_for, as: :boolean %>
+        <div class="field gender-selector">
+          <%= f.check_box :gender_for, {}, "Moteris" %>
           <%= f.label "Moteris" %>
         </div>
       <% end %>
@@ -69,37 +69,4 @@
   </div>
 </div>
 
-<style>
-  .upcase {
-    text-transform: uppercase;
-  }
 
-  .title-700 {
-    font-weight: 700;
-  }
-</style>
-
-<script type="text/javascript">
-
-  $("#gender-selector input:checkbox").on('click', function() {
-    var $box = $(this);
-    if ($box.is(":checked")) {
-      var group = "input:checkbox[name='" + $box.attr("name") + "']";
-      $(group).prop("checked", false);
-      $box.prop("checked", true);
-    } else {
-      $box.prop("checked", false);
-    }
-  });
-
-</script>
-
-<script type="text/javascript">
-  jQuery ->
-  $(".button_submit").live "click", (e) ->
-    e.preventDefault()
-    $("#form-1").trigger "submit"
-    $("#form-2").trigger "submit"
-    $("#form-3").trigger "submit"
-    $("#form-4").trigger "submit"
-</script>
