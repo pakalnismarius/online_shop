@@ -52,5 +52,9 @@ $(document).on('turbolinks:load', function() {
       $(this).delay(5000).fadeOut();
     });
   });
-  
+
+  $(function() {
+    $('body').removeClass('fade-out');
+  });
+
 });
