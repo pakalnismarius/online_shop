@@ -46,5 +46,11 @@ $(document).on('turbolinks:load', function() {
       $box.prop("checked", false);
     }
   });
+
+  $(function() {
+    $('.alert').delay(500).fadeIn(1000, function() {
+      $(this).delay(5000).fadeOut();
+    });
+  });
   
 });
