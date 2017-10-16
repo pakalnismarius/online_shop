@@ -2,72 +2,83 @@
   <script>document.getElementById("fader").className += 'fade-out';</script>
   <div class="container mt-150">
     <div class="row">
-      <div class="col-md-10 col-md-offset-1 upcase" align="center">
-        <h4 class="title-700">puoksčių užsakymas internetu </h4>
+      <div class="col-md-10 col-md-offset-1">
+        <h4 class="title-700 mb-70 upcase" align="center">Puoksčių užsakymas internetu </h4>
         <hr>
+        <div class="col-xs-6">
+          <%= form_for @customer, url: puokstes_path(@customer), html: { method: :post } do |a| %>
+            <h4>Jūsų el. paštas *<h4>
+            <%= a.text_field :email %><br />
+            <h4>Jūsų telefono numeris *<h4>
+            <%= a.text_field :phone %><br />
+            <hr>
+            <%= fields_for @bunch do |f| %>
+              <h4>Spalvos puokštėje</h4>
+              <p>( Pasirinkite vieną ar kelias dominuojančias spalvas )</p>
+              <div class="field">
+                <%= check_box_tag 'bunch[color][]', 'Violetinė' %>
+                <%= f.label "Violetinė" %>
+              </div>
+              <div class="field">
+                <%= check_box_tag 'bunch[color][]', 'Geltona' %>
+                <%= f.label "Geltona" %>
+              </div>
+              <div class="field">
+                <%= check_box_tag 'bunch[color][]', 'Žalia' %>
+                <%= f.label "Žalia" %>
+              </div>
+              <div class="field">
+                <%= check_box_tag 'bunch[color][]', 'Balta' %>
+                <%= f.label "Balta" %>
+              </div>
+              <div class="field">
+                <%= check_box_tag 'bunch[color][]', 'Švelni rožinė' %>
+                <%= f.label "Švelni rožinė" %>
+              </div>
+
+              <h4>Puokštė *</h4>
+              <div class="field gender-selector">
+                <%= f.check_box :gender_for, {}, "Vyras" %>
+                <%= f.label "Vyras" %>
+              </div>
+              <div class="field gender-selector">
+                <%= f.check_box :gender_for, {}, "Moteris" %>
+                <%= f.label "Moteris" %>
+              </div>
+               <h4>Suma *</h4>
+              <%= f.select :price, options_for_select([['11€', 1], ['16€', 2], ['22€', 3], ['29€', 4], ['45€', 5], ["55€",6], ["70€", 7], ["100€",7]], selected: :option ) %>
+              <hr>
+            <% end %>
+
+            <%= fields_for @order do |f| %>
+              <%= f.select :from, [ 'Su pristatymu','Pasiimsiu iš salono 7-1','Pasiimsiu is nezinia kur' ] %>
+
+              <h4>Pristatymo informacija</h4>
+              <p>Tikslus pristatymo adresas, gavėjo vardas.</p>
+              <%= f.text_area :address %>
+              <h4>Telefonas susisiekimui *</h4>
+              <%= f.text_area :receiver_number %>
+              <h4>Gavejo vardas *</h4>
+              <%= f.text_area :receiver_name %>
+              <h4>Data ir laikas *</h4>
+              <%= f.text_area :order_delivery_date %>
+              <h4>Pastabos</h4>
+              <p>Papildomi pageidavimai floristui</p>
+              <%= f.text_area :comment %>
+            <% end %>
+            <br>
+            <%= a.submit %>
+          <% end %>
+        </div>
+        <div class="col-xs-6">
+          <div class="square">
+            <img src="https://unsplash.it/2000/1250?image=689" class="max-image" data-color="firebrick" alt="Second Image">
+          </div>
+          <div class="square">
+              <img src="https://unsplash.it/2000/1250?image=397" class="max-image" data-color="lightblue" alt="First Image">
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="row">
-      <%= form_for @customer, url: puokstes_path(@customer), html: { method: :post } do |a| %>
-        <h3>Jūsų el. paštas *<h3>
-        <%= a.text_field :email %><br />
-        
-        <%= fields_for @bunch do |f| %>
-          <h3>Suma *</h3>
-          <%= f.select :price, options_for_select([['11€', 1], ['16€', 2], ['22€', 3], ['29€', 4], ['45€', 5], ["55€",6], ["70€", 7], ["100€",7]], selected: :option ) %>
-          </br>
-          <h3>Spalvos puokštėje</h3>
-          <p>Pasirinkite vieną ar kelias dominuojančias spalvas</p>
-          <div class="field">
-            <%= check_box_tag 'bunch[color][]', 'Violetinė' %>
-            <%= f.label "Violetinė" %>
-          </div>
-          <div class="field">
-            <%= check_box_tag 'bunch[color][]', 'Geltona' %>
-            <%= f.label "Geltona" %>
-          </div>
-          <div class="field">
-            <%= check_box_tag 'bunch[color][]', 'Žalia' %>
-            <%= f.label "Žalia" %>
-          </div>
-          <div class="field">
-            <%= check_box_tag 'bunch[color][]', 'Balta' %>
-            <%= f.label "Balta" %>
-          </div>
-          <div class="field">
-            <%= check_box_tag 'bunch[color][]', 'Švelni rožinė' %>
-            <%= f.label "Švelni rožinė" %>
-          </div>
-
-          <h3>Puokštė *</h3>
-          <div class="field gender-selector">
-            <%= f.check_box :gender_for, {}, "Vyras" %>
-            <%= f.label "Vyras" %>
-          </div>
-          <div class="field gender-selector">
-            <%= f.check_box :gender_for, {}, "Moteris" %>
-            <%= f.label "Moteris" %>
-          </div>
-        <% end %>
-
-        <%= fields_for @order do |f| %>
-          <%= f.select :from, [ 'Su pristatymu','Pasiimsiu iš salono 7-1','Pasiimsiu is nezinia kur' ] %>
-
-          <h3>Pristatymo informacija</h3>
-          <p>Tikslus pristatymo adresas, gavėjo vardas.</p>
-          <%= f.text_area :address %>
-          <h3>Telefonas susisiekimui *</h3>
-          <%= f.text_area :receiver_number %>
-          <h3>Gavejo vardas *</h3>
-          <%= f.text_area :receiver_name %>
-          <h3>Data ir laikas *</h3>
-          <%= f.text_area :order_delivery_date %>
-          <h3>Pastabos</h3>
-          <p>Papildomi pageidavimai floristui</p>
-          <%= f.text_area :comment %>
-        <% end %>
-        <%= a.submit %>
-      <% end %> 
     </div>
   </div>
 </section>
