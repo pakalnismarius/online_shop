@@ -54,7 +54,7 @@ $(document).on('turbolinks:load', function() {
   });
 
   $(function() {
-    $('body').removeClass('fade-out');
+    $('section').removeClass('fade-out');
   });
 
 });
