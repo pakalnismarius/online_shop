@@ -147,11 +147,11 @@
   font-weight: 700;
 }
 
-body {
+section {
     opacity: 1;
     transition: 1s opacity;
 }
-body.fade-out {
+.fade-out {
     opacity: 0;
     transition: none;
 }
