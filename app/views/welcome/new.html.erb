@@ -46,7 +46,7 @@
                 <%= f.label "Moteris" %>
               </div>
                <h4>Suma *</h4>
-              <%= f.select :price, options_for_select([['11€', 1], ['16€', 2], ['22€', 3], ['29€', 4], ['45€', 5], ["55€",6], ["70€", 7], ["100€",7]], selected: :option ) %>
+              <%= f.select :price, options_for_select([['11€', 11], ['16€', 16], ['22€', 22], ['29€', 29], ['45€', 45], ["55€",55], ["70€", 70], ["100€",100]] ) %>
               <hr>
             <% end %>
             
@@ -68,7 +68,7 @@
               </div>
             <% end %>
             <br>
-            <%= a.submit %>
+            <%= a.submit 'Patvirtinti', class: 'submit-btn' %>
           <% end %>
         </div>
         <div class="col-xs-6">

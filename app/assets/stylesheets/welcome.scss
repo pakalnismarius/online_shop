@@ -163,3 +163,21 @@ label {
 #additional-options {
   display: none;
 }
+
+.submit-btn {
+  margin-top: 20px;
+  margin-bottom: 30px;
+  border: 1px solid transparent;
+  color: #fff;
+  background-color: #272727;
+  text-align: center;
+  padding: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.submit-btn:hover {
+  color: #272727;
+  background-color: #fff;
+  border: 1px solid #272727;
+}
