@@ -16,6 +16,7 @@
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= home
+//= modal
 //= welcome
 //= require turbolinks
 //= require_tree .

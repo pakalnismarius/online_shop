@@ -1,5 +1,5 @@
 <section id="fader">
-  <script>document.getElementById("fader").className += 'fade-out';</script>
+<script>document.getElementById("fader").className += 'fade-out';</script>
   <div class="container mt-150">
     <div class="row">
       <div class="col-md-10 col-md-offset-1">
@@ -35,7 +35,6 @@
                 <%= check_box_tag 'bunch[color][]', 'Švelni rožinė' %>
                 <%= f.label "Švelni rožinė" %>
               </div>
-
               <h4>Puokštė *</h4>
               <div class="field gender-selector">
                 <%= f.check_box :gender_for, {}, "Vyras" %>
@@ -49,7 +48,6 @@
               <%= f.select :price, options_for_select([['11€', 11], ['16€', 16], ['22€', 22], ['29€', 29], ['45€', 45], ["55€",55], ["70€", 70], ["100€",100]] ) %>
               <hr>
             <% end %>
-            
             <%= fields_for @order do |f| %>
               <%= f.select :from, [ 'Pasiimsiu iš salono 7-1','Pasiimsiu is nezinia kur','Su pristatymu' ], :selected => params[:pid] %>
               <div id="additional-options">
@@ -80,6 +78,26 @@
           </div>
         </div>
       </div>
+    </div>
+    <hr>
+    <div id="portfolio">
+      <% @images.each_with_index do |image, index| %>
+        <div class="tile scale-anm web all">
+          <a href="#" data-toggle="modal" data-target=<%="##{index}"%>>
+            <figure><%= image_tag "#{image.split('/').last}" %></figure>
+          </a>
+        </div>
+        <div id=<%="#{index}"%> class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <button type="button" class="x" data-dismiss="modal">&times;</button>
+                <div class="modal-shape">
+                  <%= image_tag "#{image.split('/').last}", class: "img-responsive" %>
+                </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
     </div>
   </div>
 </section>

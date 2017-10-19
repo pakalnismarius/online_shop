@@ -24,6 +24,7 @@ class WelcomeController < ApplicationController
     @customer = Customer.new
     @order = @customer.orders.new
     @bunch = @order.bunches.new
+    @images = Dir.glob("app/assets/images/*.jpg")
   end
 
   def create
@@ -31,11 +32,10 @@ class WelcomeController < ApplicationController
     @order = @customer.orders.new(order_params)
     @bunch = @order.bunches.new(bunch_params)
     if @bunch.save
-      redirect_to root_path
-      flash[:success] = "Successfully created!"
+      redirect_to home_path
+      flash[:success] = "Jūsų užsakymas sėkmingai išsiųstas"
     else
-      redirect_to about_us_path
-      #render action: 'new'
+      render action: 'new'
     end
   end
 
