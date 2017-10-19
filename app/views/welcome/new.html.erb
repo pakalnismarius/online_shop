@@ -49,22 +49,23 @@
               <%= f.select :price, options_for_select([['11€', 1], ['16€', 2], ['22€', 3], ['29€', 4], ['45€', 5], ["55€",6], ["70€", 7], ["100€",7]], selected: :option ) %>
               <hr>
             <% end %>
-
+            
             <%= fields_for @order do |f| %>
-              <%= f.select :from, [ 'Su pristatymu','Pasiimsiu iš salono 7-1','Pasiimsiu is nezinia kur' ] %>
-
-              <h4>Pristatymo informacija</h4>
-              <p>Tikslus pristatymo adresas, gavėjo vardas.</p>
-              <%= f.text_area :address %>
-              <h4>Telefonas susisiekimui *</h4>
-              <%= f.text_area :receiver_number %>
-              <h4>Gavejo vardas *</h4>
-              <%= f.text_area :receiver_name %>
-              <h4>Data ir laikas *</h4>
-              <%= f.text_area :order_delivery_date %>
-              <h4>Pastabos</h4>
-              <p>Papildomi pageidavimai floristui</p>
-              <%= f.text_area :comment %>
+              <%= f.select :from, [ 'Pasiimsiu iš salono 7-1','Pasiimsiu is nezinia kur','Su pristatymu' ], :selected => params[:pid] %>
+              <div id="additional-options">
+                <h4>Pristatymo informacija</h4>
+                <p>Tikslus pristatymo adresas, gavėjo vardas.</p>
+                <%= f.text_area :address %>
+                <h4>Telefonas susisiekimui *</h4>
+                <%= f.text_area :receiver_number %>
+                <h4>Gavejo vardas *</h4>
+                <%= f.text_area :receiver_name %>
+                <h4>Data ir laikas *</h4>
+                <%= f.text_area :order_delivery_date %>
+                <h4>Pastabos</h4>
+                <p>Papildomi pageidavimai floristui</p>
+                <%= f.text_area :comment %>
+              </div>
             <% end %>
             <br>
             <%= a.submit %>

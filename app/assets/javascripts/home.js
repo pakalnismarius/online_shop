@@ -57,4 +57,14 @@ $(document).on('turbolinks:load', function() {
     $('section').removeClass('fade-out');
   });
 
+  $(function () {
+    document.getElementById("order_from").onclick = function() { 
+      if($('#order_from').val() == "Su pristatymu"){
+        $("#additional-options").slideDown(1000);
+      }else{
+        $("#additional-options").slideUp(1000);
+      }
+    };
+  });
+
 });
