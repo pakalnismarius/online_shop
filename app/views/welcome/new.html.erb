@@ -80,24 +80,26 @@
       </div>
     </div>
     <hr>
-    <div id="portfolio">
+
+    <div class="gal">
       <% @images.each_with_index do |image, index| %>
-        <div class="tile scale-anm web all">
-          <a href="#" data-toggle="modal" data-target=<%="##{index}"%>>
-            <figure><%= image_tag "#{image.split('/').last}" %></figure>
-          </a>
-        </div>
-        <div id=<%="#{index}"%> class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <button type="button" class="x" data-dismiss="modal">&times;</button>
-                <div class="modal-shape">
-                  <%= image_tag "#{image.split('/').last}", class: "img-responsive" %>
-                </div>
+         <figure>
+            <a href="#" data-toggle="modal" data-target=<%="##{index}"%>>
+              <%= image_tag "#{image.split('/').last}", class: "tile" %>
+            </a>
+          </figure>
+          <div id=<%="#{index}"%> class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <button type="button" class="x" data-dismiss="modal">&times;</button>
+                  <div class="modal-shape">
+                    <%= image_tag "#{image.split('/').last}", class: "img-responsive" %>
+                  </div>
+              </div>
             </div>
           </div>
-        </div>
       <% end %>
     </div>
+
   </div>
 </section>
