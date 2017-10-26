@@ -59,55 +59,6 @@
   border-color: #333;
 }
 
-.welcome-nav{
-  background-color: transparent;
-  z-index: 1;
-  border: none;
-  position: fixed;
-  top: 0px;
-  width: 100%;
-}
-
-.nav-text {
-  font-family: "proxima-nova",arial,sans-serif;
-  font-size: 13px;
-  font-weight: 400;
-  text-transform: none;
-  letter-spacing: 0px;
-  font-size: 11px;
-  font-weight: 600;
-  font-style: normal;
-  text-transform: uppercase;
-  letter-spacing: .98px;
-  display: block;
-  cursor: pointer;
-  border-bottom: 1px solid transparent;
-  transition: color .3s,border-bottom-color .3s;
-}
-
-.nav-socials {
-  float: right;
-  margin-top: 25px;
-}
-
-.navbar-default .navbar-nav.nav-text li  a{
-  color: #000;
-}
-
-.navbar-default .navbar-nav > .active > a,
-.navbar-default .navbar-nav > .active > a:hover{
-  color: #c6c6c6 !important;
-  background-color: transparent;
-  text-decoration: underline;
-}
-
-.navbar-default .navbar-nav a:hover,
-.navbar-default .navbar-nav a:focus{
-  color: rgba(107,107,107,.56);
-  background-color: transparent;
-  text-decoration: underline;
-}
-
 .max-image{
   max-width: 100%;
   max-height: 100%;

@@ -1,16 +1,24 @@
 <nav class="navbar navbar-default welcome-nav" id="nav">
   <div class="container-fluid">
+     <button class='nav-hide' type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">Menu
+     </button>
     <div class="navbar-header">
       <%= image_tag("white.png") %>
     </div>
-    <ul class="nav navbar-nav mt-25 nav-text">
-      <li class="<%= active_class(home_path) %>"><%= link_to 'pradinis', home_path %></li>
-      <li class="<%= active_class(about_us_path) %>"><%= link_to 'apie mus', about_us_path %></li>
-      <li class="<%= active_class(puokstes_path) %>"><%= link_to 'puokštės', puokstes_path %></li>
-      <li class="<%= active_class(root_path) %>"><a href="#">vazonai ir baldai laukui</a></li>
-      <li class="<%= active_class(root_path) %>"><a href="#">įmonėms</a></li>
-      <li class="<%= active_class(root_path) %>"><a href="#">kontaktai</a></li>
-    </ul>
-    <div class="nav-socials"><%= render 'layouts/socials' %></div>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="nav navbar-nav mt-25 nav-text">
+        <li class="<%= active_class(home_path) %>"><%= link_to 'pradinis', home_path %></li>
+        <li class="<%= active_class(about_us_path) %>"><%= link_to 'apie mus', about_us_path %></li>
+        <li class="<%= active_class(puokstes_path) %>"><%= link_to 'puokštės', puokstes_path %></li>
+        <li class="<%= active_class(root_path) %>"><a href="#">vazonai ir baldai laukui</a></li>
+        <li class="<%= active_class(root_path) %>"><a href="#">įmonėms</a></li>
+        <li class="<%= active_class(root_path) %>"><a href="#">kontaktai</a></li>
+      </ul>
+      <div class="nav-socials"><%= render 'layouts/socials' %></div>
+    </div>
   </div>
 </nav>
+
+<style type="text/css">
+
+</style>
