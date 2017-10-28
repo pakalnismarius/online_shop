@@ -9,10 +9,10 @@
       <ul class="nav navbar-nav mt-25 nav-text">
         <li class="<%= active_class(home_path) %>"><%= link_to 'pradinis', home_path %></li>
         <li class="<%= active_class(about_us_path) %>"><%= link_to 'apie mus', about_us_path %></li>
-        <li class="<%= active_class(puokstes_path) %>"><%= link_to 'puokštės', puokstes_path %></li>
-        <li class="<%= active_class(root_path) %>"><a href="#">vazonai ir baldai laukui</a></li>
-        <li class="<%= active_class(root_path) %>"><a href="#">įmonėms</a></li>
-        <li class="<%= active_class(root_path) %>"><a href="#">kontaktai</a></li>
+        <li class="<%= active_class(puokstes_path) %>"><%= link_to 'puokštės', bunch_path %></li>
+        <li class="<%= active_class(product_path) %>"><%= link_to 'vazonai ir baldai laukui', product_path %></li>
+        <li class="<%= active_class(companies_path) %>"><%= link_to 'įmonėms', companies_path %></li>
+        <li class="<%= active_class(contacts_path) %>"><%= link_to 'kontaktai', contacts_path %></li>
       </ul>
       <div class="nav-socials"><%= render 'layouts/socials' %></div>
     </div>

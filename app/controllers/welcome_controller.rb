@@ -1,19 +1,21 @@
 class WelcomeController < ApplicationController
 
   def welcome
-    @bunch = Bunch.new
   end
 
   def home
-    @bunch = Bunch.new
   end
 
   def about_us
-    @bunch = Bunch.new
   end
 
   def product
-    @bunch = Bunch.new
+  end
+
+  def companies
+  end
+
+  def contacts
   end
 
   def index
