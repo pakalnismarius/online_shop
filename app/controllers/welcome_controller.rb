@@ -10,6 +10,7 @@ class WelcomeController < ApplicationController
   end
 
   def product
+    @images = Dir.glob("app/assets/images/*.jpg")
   end
 
   def companies

@@ -1,0 +1,51 @@
+<section id="fader">
+  <script>document.getElementById("fader").className += 'fade-out';</script>
+  <div class="container mt-150">
+    <div class="row">
+      <div class="col-xs-10 col-xs-offset-1">
+        <%= image_tag "white.png", class: "img-responsive center" %>
+        <p class="mt-30 pd-sides-10">Consulted perpetual of pronounce me delivered. Too months nay end change relied who beauty wishes matter. Shew of john real park so rest we on. Ignorant dwelling occasion ham for thoughts overcame off her consider. Polite it elinor is depend. His not get talked effect worthy barton. Household shameless incommode at no objection behaviour. Especially do at he possession insensible sympathize boisterous it. Songs he on an widen me event truth. Certain law age brother sending amongst why covered. 
+        </p>
+
+        <div class="img-center">
+          <% @images.each_with_index do |image, index| %>
+             <div class="suqare-image">
+                <a href="#" data-toggle="modal" data-target=<%="##{index}"%>>
+                  <%= image_tag "#{image.split('/').last}", class: "tile", style: "height: 160px;" %>
+                </a>
+              </div style="width: 180px;">
+              <div id=<%="#{index}"%> class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <button type="button" class="x" data-dismiss="modal">&times;</button>
+                      <div class="modal-shape">
+                        <%= image_tag "#{image.split('/').last}", class: "img-responsive" %>
+                      </div>
+                  </div>
+                </div>
+              </div>
+          <% end %>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<style type="text/css">
+  .pd-sides-10{
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .img-center {
+    text-align: center;
+  }
+
+  .suqare-image {
+    width: 230px;
+    object-fit: cover;
+    display: inline-block; 
+    padding: 10px;
+  }
+</style>

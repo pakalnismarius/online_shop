@@ -69,3 +69,21 @@ button.x {
 button.x:hover {
   color: red;
 }
+
+/* suare gallary  */
+
+.pd-sides-10{
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.img-center {
+  text-align: center;
+}
+
+.suqare-image {
+  width: 230px;
+  object-fit: cover;
+  display: inline-block; 
+  padding: 10px;
+}

@@ -80,26 +80,26 @@
       </div>
     </div>
     <hr>
-
-    <div class="gal">
-      <% @images.each_with_index do |image, index| %>
-         <figure>
-            <a href="#" data-toggle="modal" data-target=<%="##{index}"%>>
-              <%= image_tag "#{image.split('/').last}", class: "tile" %>
-            </a>
-          </figure>
-          <div id=<%="#{index}"%> class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <button type="button" class="x" data-dismiss="modal">&times;</button>
-                  <div class="modal-shape">
-                    <%= image_tag "#{image.split('/').last}", class: "img-responsive" %>
-                  </div>
+    <div class="col-md-10 col-md-offset-1">
+      <div class="gal">
+        <% @images.each_with_index do |image, index| %>
+           <figure>
+              <a href="#" data-toggle="modal" data-target=<%="##{index}"%>>
+                <%= image_tag "#{image.split('/').last}", class: "tile" %>
+              </a>
+            </figure>
+            <div id=<%="#{index}"%> class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <button type="button" class="x" data-dismiss="modal">&times;</button>
+                    <div class="modal-shape">
+                      <%= image_tag "#{image.split('/').last}", class: "img-responsive" %>
+                    </div>
+                </div>
               </div>
             </div>
-          </div>
-      <% end %>
+        <% end %>
+      </div>
     </div>
-
   </div>
 </section>
