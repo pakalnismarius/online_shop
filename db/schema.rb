@@ -10,7 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171008232651) do
+ActiveRecord::Schema.define(version: 20171008064507) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "bunches", force: :cascade do |t|
     t.integer  "order_id"
@@ -20,7 +23,7 @@ ActiveRecord::Schema.define(version: 20171008232651) do
     t.text     "comment"
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
-    t.index ["order_id"], name: "index_bunches_on_order_id"
+    t.index ["order_id"], name: "index_bunches_on_order_id", using: :btree
   end
 
   create_table "customers", force: :cascade do |t|
@@ -42,7 +45,9 @@ ActiveRecord::Schema.define(version: 20171008232651) do
     t.string   "from"
     t.integer  "receiver_number"
     t.string   "receiver_name"
-    t.index ["customer_id"], name: "index_orders_on_customer_id"
+    t.index ["customer_id"], name: "index_orders_on_customer_id", using: :btree
   end
 
+  add_foreign_key "bunches", "orders"
+  add_foreign_key "orders", "customers"
 end
